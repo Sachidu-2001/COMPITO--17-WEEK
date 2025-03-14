@@ -8,10 +8,15 @@ namespace EsamePolizia.Models
         [Key]
         public int Id { get; set; }
 
+
         public DateOnly DataViolazione { get; set; }
+        [Required]
         public string IndirizzoViolazione { get; set; }
+        [Required]
         public string Nominativo_Agente { get; set; }
+        [Required]
         public DateOnly DatatrascrizioneVerbale { get; set; }
+        [Required]
         public decimal Importo { get; set; }
         public int DecurtamentoPunti { get; set; }
 
