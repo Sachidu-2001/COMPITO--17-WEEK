@@ -1,0 +1,31 @@
+﻿@model IEnumerable<EsamePolizia.Models.Tipo_Violazione>
+
+@{
+    ViewData["Title"] = "Elenco Violazioni";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<a href="@Url.Action("Add")" class="btn btn-primary">Aggiungi Violazione</a>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID Violazione</th>
+            <th>Descrizione</th>
+            <th>Azioni</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var tipoViolazione in Model)
+        {
+            <tr>
+                <td>@tipoViolazione.Id_Violazione</td>
+                <td>@tipoViolazione.Descrizione</td>
+                <td>
+                    <a href="@Url.Action("Delete", new { id = tipoViolazione.Id_Violazione })" class="btn btn-danger">Elimina</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

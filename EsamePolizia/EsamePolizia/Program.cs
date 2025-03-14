@@ -1,5 +1,7 @@
 var builder = WebApplication.CreateBuilder(args);
 
+builder.WebHost.UseUrls("http://localhost:2525");
+
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 

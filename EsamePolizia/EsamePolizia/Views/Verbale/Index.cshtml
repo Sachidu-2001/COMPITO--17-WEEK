@@ -1,0 +1,39 @@
+﻿@model IEnumerable<EsamePolizia.Models.Verbale>
+
+@{
+    ViewData["Title"] = "Elenco Verbali";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<a href="@Url.Action("Add")" class="btn btn-primary">Aggiungi Verbale</a>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Data Violazione</th>
+            <th>Indirizzo Violazione</th>
+            <th>Agente</th>
+            <th>Importo</th>
+            <th>Decurtamento Punti</th>
+            <th>Azioni</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var verbale in Model)
+        {
+            <tr>
+                <td>@verbale.Id</td>
+                <td>@verbale.DataViolazione</td>
+                <td>@verbale.IndirizzoViolazione</td>
+                <td>@verbale.Nominativo_Agente</td>
+                <td>@verbale.Importo</td>
+                <td>@verbale.DecurtamentoPunti</td>
+                <td>
+                    <a href="@Url.Action("Delete", new { id = verbale.Id })" class="btn btn-danger">Elimina</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

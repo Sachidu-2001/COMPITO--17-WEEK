@@ -1,0 +1,36 @@
+﻿@model EsamePolizia.Models.Anagrafica
+
+@{
+    ViewData["Title"] = "Aggiungi Anagrafica";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<form asp-action="Add" method="post">
+    <div class="form-group">
+        <label for="Name">Nome</label>
+        <input type="text" class="form-control" id="Name" name="Name" required />
+    </div>
+    <div class="form-group">
+        <label for="Surname">Cognome</label>
+        <input type="text" class="form-control" id="Surname" name="Surname" required />
+    </div>
+    <div class="form-group">
+        <label for="Indirizzo">Indirizzo</label>
+        <input type="text" class="form-control" id="Indirizzo" name="Indirizzo" required />
+    </div>
+    <div class="form-group">
+        <label for="Città">Città</label>
+        <input type="text" class="form-control" id="Città" name="Città" required />
+    </div>
+    <div class="form-group">
+        <label for="CAP">CAP</label>
+        <input type="text" class="form-control" id="CAP" name="CAP" required />
+    </div>
+    <div class="form-group">
+        <label for="Cod_Fisc">Codice Fiscale</label>
+        <input type="text" class="form-control" id="Cod_Fisc" name="Cod_Fisc" required />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Salva</button>
+</form>
